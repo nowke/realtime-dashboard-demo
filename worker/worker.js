@@ -8,37 +8,37 @@ const request = require("request-promise");
 const queries = {
   CPU: `
     mutation {
-        cpu {
+      cpu {
         percentage
-        }
+      }
     }
     `,
   TRAFFIC: `
     mutation {
-        traffic {
-          total
-          dps {
-            timestamp
-            value
-          }
+      traffic {
+        total
+        dps {
+          timestamp
+          value
         }
+      }
     }
     `,
   DISTRIBUTION: `
     mutation {
-        distribution {
-          region
-          percentage
-        }
+      distribution {
+        region
+        percentage
+      }
     }
     `,
   MESSAGES: `
     mutation {
-        messages {
-          title
-          description
-          color
-        }
+      messages {
+        title
+        description
+        color
+      }
     }
     `
 };
