@@ -1,0 +1,24 @@
+{
+  "name": "realtime-monitor-server",
+  "version": "1.0.0",
+  "description": "Server code for Real-time monitor using GraphQL and Redis",
+  "main": "index.js",
+  "author": "Navaneesh Kumar",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .*/**.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.4.2",
+    "graphql": "^14.1.1",
+    "graphql-redis-subscriptions": "^2.0.0",
+    "graphql-subscriptions": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "1.16.4"
+  }
+}
