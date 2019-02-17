@@ -7,18 +7,21 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .*/**.js",
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "apollo-server": "^2.4.2",
     "graphql": "^14.1.1",
     "graphql-redis-subscriptions": "^2.0.0",
-    "graphql-subscriptions": "^1.0.0"
+    "graphql-subscriptions": "^1.0.0",
+    "ioredis": "^4.6.2",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "eslint": "^5.14.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.1",
+    "nodemon": "^1.18.10",
     "prettier": "1.16.4"
   }
 }

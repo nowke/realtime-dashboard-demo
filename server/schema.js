@@ -1,45 +1,51 @@
 const { gql } = require("apollo-server");
 
 const schema = gql`
-type Dps {
+  type Dps {
     timestamp: Int!
     value: Float!
-}
+  }
 
-type Traffic {
+  type Traffic {
     total: Int!
     dps: [Dps]
-}
+  }
 
-type CPU {
+  type CPU {
     percentage: Float!
-}
+  }
 
-type Distribution {
+  type Distribution {
     region: String!
     percentage: Float!
-}
+  }
 
-type Message {
+  type Message {
     title: String!
     description: String!
     color: String!
-}
+  }
 
-type Query {
+  type Query {
     cpu: CPU
     traffic: Traffic
     distribution: [Distribution]
     messages: [Message]
-}
+  }
 
-type Mutation {
-    addCPU(percentage: Float): CPU
-}
+  type Mutation {
+    cpu: CPU
+    traffic: Traffic
+    distribution: [Distribution]
+    messages: [Message]
+  }
 
-type Subscription {
-    subCPU: CPU
-}
+  type Subscription {
+    cpu: CPU
+    traffic: Traffic
+    distribution: [Distribution]
+    messages: [Message]
+  }
 `;
 
 module.exports = schema;
