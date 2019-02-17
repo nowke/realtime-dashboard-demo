@@ -42,7 +42,7 @@ class Distribution extends Component {
         animate={{ duration: 500 }}
         height={300}
         data={data.distribution || []}
-        colorScale={["gold", "navy" ]}
+        colorScale={["#2c3e50", "#95a5a6" ]}
         containerComponent={<VictoryContainer responsive={true} />}
         x="region"
         y="percentage"
@@ -54,7 +54,7 @@ class Distribution extends Component {
 export default class DistributionContainer extends Component {
   render() {
     return (
-      <div style={{ border: "1px solid #3498db", height: 300 }}>
+      <div style={{ border: "1px solid #2c3e50", height: 300 }}>
         <Query query={QUERY}>
           {({ subscribeToMore, ...result }) => (
             <Distribution

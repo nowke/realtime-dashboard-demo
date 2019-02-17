@@ -74,7 +74,7 @@ class CpuUsage extends Component {
 export default class CpuUsageContainer extends Component {
   render() {
     return (
-      <div style={{ border: "1px solid #3498db", height: 300 }}>
+      <div style={{ border: "1px solid #2c3e50", height: 300 }}>
         <Query query={QUERY}>
           {({ subscribeToMore, ...result }) => (
             <CpuUsage

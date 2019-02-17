@@ -8,6 +8,22 @@ import Traffic from "../components/Traffic";
 import Distribution from "../components/Distribution";
 import Messages from "../components/Messages";
 
+const Label = ({ title }) => (
+  <div
+    style={{
+      width: "100%",
+      background: "#2c3e50",
+      color: "#fff",
+      height: 35,
+      textAlign: "center",
+      fontSize: "1.3em",
+      padding: 4
+    }}
+  >
+    {title}
+  </div>
+);
+
 export default class Home extends Component {
   render() {
     return (
@@ -18,51 +34,15 @@ export default class Home extends Component {
           <Row type="flex" gutter={8}>
             <Col span={6}>
               <CpuUsage />
-              <div
-                style={{
-                  width: "100%",
-                  background: "#3498db",
-                  color: "#fff",
-                  height: 35,
-                  textAlign: "center",
-                  fontSize: "1.3em",
-                  padding: 4
-                }}
-              >
-                Avg CPU Usage
-              </div>
+              <Label title="Avg CPU Usage" />
             </Col>
             <Col span={12}>
               <Traffic />
-              <div
-                style={{
-                  width: "100%",
-                  background: "#3498db",
-                  color: "#fff",
-                  height: 35,
-                  textAlign: "center",
-                  fontSize: "1.3em",
-                  padding: 4
-                }}
-              >
-                Traffic heartbeat
-              </div>
+              <Label title="Traffic heartbeat" />
             </Col>
             <Col span={6}>
               <Distribution />
-              <div
-                style={{
-                  width: "100%",
-                  background: "#3498db",
-                  color: "#fff",
-                  height: 35,
-                  textAlign: "center",
-                  fontSize: "1.3em",
-                  padding: 4
-                }}
-              >
-                Traffic Distribution
-              </div>
+              <Label title="Region Distribution" />
             </Col>
           </Row>
           <br />

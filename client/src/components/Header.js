@@ -5,7 +5,7 @@ export default () => {
     <div
       style={{
         height: 50,
-        background: "#3498db",
+        background: "#2c3e50",
         width: "100%"
       }}
     >

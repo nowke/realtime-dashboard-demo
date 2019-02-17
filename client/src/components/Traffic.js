@@ -47,8 +47,7 @@ class Traffic extends Component {
         standalone={true}
         height={300}
         style={{
-          data: { stroke: "#c43a31" },
-          parent: { border: "1px solid #ccc" }
+          data: { stroke: "#27ae60" },
         }}
         data={data.traffic.dps.map(item => ({
           x: item.timestamp,
@@ -63,7 +62,7 @@ class Traffic extends Component {
 export default class TrafficContainer extends Component {
   render() {
     return (
-      <div style={{ border: "1px solid #3498db", height: 300 }}>
+      <div style={{ border: "1px solid #2c3e50", height: 300 }}>
         <Query query={QUERY}>
           {({ subscribeToMore, ...result }) => (
             <Traffic
