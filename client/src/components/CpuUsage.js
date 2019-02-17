@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
+import { VictoryPie, VictoryLabel } from "victory";
+
+import Loading from "./Loading";
 
 const QUERY = gql`
   query CPU {
@@ -23,22 +26,55 @@ class CpuUsage extends Component {
     this.props.subscribeToNewData();
   }
 
+  getData(percent) {
+    return [{ x: 1, y: percent }, { x: 2, y: 100 - percent }];
+  }
+
   render() {
     const { data, error, loading } = this.props;
     if (loading) {
-      return <p>Loading...</p>;
+      return <Loading />;
     }
     if (error) {
       return <p>Error!</p>;
     }
-    return <p>CPU Usage: {data.cpu.percentage}%</p>;
+    return (
+      <svg viewBox="0 0 400 400" width="100%">
+        <VictoryPie
+          standalone={false}
+          animate={{ duration: 500 }}
+          width={400}
+          height={400}
+          data={this.getData(data.cpu.percentage)}
+          innerRadius={120}
+          cornerRadius={25}
+          labels={() => null}
+          style={{
+            data: {
+              fill: d => {
+                const color = d.y > 60 ? "red" : "green";
+                return d.x === 1 ? color : "transparent";
+              }
+            }
+          }}
+        />
+        <VictoryLabel
+          textAnchor="middle"
+          verticalAnchor="middle"
+          x={200}
+          y={200}
+          text={`${Math.round(data.cpu.percentage)}%`}
+          style={{ fontSize: 45 }}
+        />
+      </svg>
+    );
   }
 }
 
 export default class CpuUsageContainer extends Component {
   render() {
     return (
-      <div>
+      <div style={{ border: "1px solid #1890ff", height: "100%" }}>
         <Query query={QUERY}>
           {({ subscribeToMore, ...result }) => (
             <CpuUsage
@@ -55,6 +91,19 @@ export default class CpuUsageContainer extends Component {
             />
           )}
         </Query>
+        <div
+          style={{
+            width: "100%",
+            background: "#1890ff",
+            color: "#fff",
+            height: 35,
+            textAlign: "center",
+            fontSize: "1.3em",
+            padding: 4
+          }}
+        >
+          Avg CPU Usage
+        </div>
       </div>
     );
   }

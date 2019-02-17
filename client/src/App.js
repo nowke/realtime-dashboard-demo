@@ -7,6 +7,7 @@ import { HttpLink } from "apollo-link-http";
 import { WebSocketLink } from "apollo-link-ws";
 import { getMainDefinition } from "apollo-utilities";
 
+import './App.css'
 import Home from "./Pages/Home";
 
 // Create an http link:

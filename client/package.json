@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.13.2",
     "apollo-boost": "^0.1.28",
+    "apollo-client": "^2.4.13",
     "apollo-link-ws": "^1.0.14",
     "graphql": "^14.1.1",
     "react": "^16.8.2",
     "react-apollo": "^2.4.1",
     "react-dom": "^16.8.2",
     "react-scripts": "2.1.5",
-    "subscriptions-transport-ws": "^0.9.15"
+    "subscriptions-transport-ws": "^0.9.15",
+    "victory": "^31.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
