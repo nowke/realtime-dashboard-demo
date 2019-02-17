@@ -57,22 +57,22 @@ const messageData = () => {
     {
       title: "Server restarted - s1.us-west",
       description: "Something went wrong! Had to reboot",
-      color: "#00ff00"
+      color: "#27ae60"
     },
     {
       title: "Service unavailable - web003",
       description: "web003 service down from last 5 minutes, Take action!",
-      color: "#00ffff"
+      color: "#f39c12"
     },
     {
       title: "High CPU Utilization - 95% s2.us-east",
       description: "Watch for s2.us-east. CPU is at maximum!",
-      color: "#ff0000"
+      color: "#e74c3c"
     },
     {
       title: "High latency - int005",
       description: "Woah! This is unacceptable. Latency has gone nuts.",
-      color: "#ff0000"
+      color: "#e74c3c"
     }
   ];
   return messages.slice(0, parseInt(Math.random() * 4 + 1, 10));
