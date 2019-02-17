@@ -1,0 +1,15 @@
+{
+  "name": "realtime-monitor-worker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Navaneesh Kumar",
+  "license": "MIT",
+  "scripts": {
+    "start": "node worker.js"
+  },
+  "dependencies": {
+    "node-schedule": "^1.3.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
