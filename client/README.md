@@ -1,1 +1,1 @@
-# Real-time Monitoring (Client)
+# Real-time Dashboard (Client)

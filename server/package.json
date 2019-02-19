@@ -1,7 +1,7 @@
 {
-  "name": "realtime-monitor-server",
+  "name": "realtime-dashboard-server",
   "version": "1.0.0",
-  "description": "Server code for Real-time monitor using GraphQL and Redis",
+  "description": "Server code for Real-time dashboard using GraphQL and Redis",
   "main": "index.js",
   "author": "Navaneesh Kumar",
   "license": "MIT",

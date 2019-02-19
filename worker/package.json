@@ -1,5 +1,5 @@
 {
-  "name": "realtime-monitor-worker",
+  "name": "realtime-dashboard-worker",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Navaneesh Kumar",

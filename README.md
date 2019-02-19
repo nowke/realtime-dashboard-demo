@@ -1,4 +1,4 @@
-# Real-time Monitoring using GraphQL, Redis PubSub
+# A lightweight Realtime dashboard using React, GraphQL subscriptions and Redis PubSub
 
 ## Preview
 
