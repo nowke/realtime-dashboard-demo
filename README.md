@@ -127,7 +127,7 @@ Kill the worker process to stop the dashboard from getting new values. Now, publ
 
 > Note: Provide a valid JSON String as `value` for the dashboard to render the value correctly.
 
-Let's publish a `53%` value as CPU percentage
+Publish a `53%` value as CPU percentage
 
 ```
 $ redis-cli
@@ -136,7 +136,7 @@ $ redis-cli
 127.0.0.1:6379>
 ```
 
-And, the dashboard's CPU panel show `53%` value immediately
+And, the dashboard's CPU panel shows `53%` value immediately
 
 ![Client CPU Value](client/client-cpu.png)
 
