@@ -14,6 +14,14 @@ const COMPONENTS = {
   MESSAGES: "messages"
 };
 
+/**
+ * (1) Get random data for `component` by calling `generator` function
+ * (2) Publish the data to channel for `component`
+ * (3) Cache the data in redis against key `component`
+ *
+ * @param {function} generator - Corresponding data generator function for `component`
+ * @param {string} component
+ */
 const publishRandomData = async (generator, component) => {
   const data = generator();
   pubsub.publish(component, { [component]: data });

@@ -71,27 +71,25 @@ class CpuUsage extends Component {
   }
 }
 
-export default class CpuUsageContainer extends Component {
-  render() {
-    return (
-      <div style={{ border: "1px solid #2c3e50", height: 300 }}>
-        <Query query={QUERY}>
-          {({ subscribeToMore, ...result }) => (
-            <CpuUsage
-              {...result}
-              subscribeToNewData={() =>
-                subscribeToMore({
-                  document: SUBSCRIPTION,
-                  updateQuery: (prev, { subscriptionData }) => {
-                    if (!subscriptionData.data) return prev;
-                    return subscriptionData.data;
-                  }
-                })
+const CpuUsageContainer = () => (
+  <div style={{ border: "1px solid #2c3e50", height: 300 }}>
+    <Query query={QUERY}>
+      {({ subscribeToMore, ...result }) => (
+        <CpuUsage
+          {...result}
+          subscribeToNewData={() =>
+            subscribeToMore({
+              document: SUBSCRIPTION,
+              updateQuery: (prev, { subscriptionData }) => {
+                if (!subscriptionData.data) return prev;
+                return subscriptionData.data;
               }
-            />
-          )}
-        </Query>
-      </div>
-    );
-  }
-}
+            })
+          }
+        />
+      )}
+    </Query>
+  </div>
+);
+
+export default CpuUsageContainer;
