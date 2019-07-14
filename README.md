@@ -1,5 +1,7 @@
 # A lightweight real-time dashboard using React, GraphQL subscriptions and Redis PubSub
 
+Walkthrough: [https://dev.to/nowke/building-real-time-dashboard-using-react-graphql-subscriptions-and-redis-pubsub-2gip](https://dev.to/nowke/building-real-time-dashboard-using-react-graphql-subscriptions-and-redis-pubsub-2gip)
+
 ## Preview
 
 ![Preview](demo.gif)
