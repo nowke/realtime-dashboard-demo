@@ -40,11 +40,13 @@ class CpuUsage extends Component {
     }
     return (
       <VictoryChart width={450} height={300}>
-        <VictoryAxis style={{ 
-            axis: {stroke: "transparent"}, 
-            ticks: {stroke: "transparent"},
-            tickLabels: { fill:"transparent"} 
-        }} />
+        <VictoryAxis
+          style={{
+            axis: { stroke: "transparent" },
+            ticks: { stroke: "transparent" },
+            tickLabels: { fill: "transparent" }
+          }}
+        />
         <VictoryPie
           standalone={false}
           animate={{ duration: 500 }}
