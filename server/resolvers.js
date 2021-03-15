@@ -3,7 +3,7 @@ const {
   cpuData,
   regionData,
   messageData,
-  trafficData
+  trafficData,
 } = require("./utils/generator");
 const { get, set } = require("./utils/redis");
 
@@ -11,7 +11,7 @@ const COMPONENTS = {
   CPU: "cpu",
   TRAFFIC: "traffic",
   DISTRIBUTION: "distribution",
-  MESSAGES: "messages"
+  MESSAGES: "messages",
 };
 
 /**
@@ -34,26 +34,26 @@ module.exports = {
     cpu: () => get(COMPONENTS.CPU),
     traffic: () => get(COMPONENTS.TRAFFIC),
     distribution: () => get(COMPONENTS.DISTRIBUTION),
-    messages: () => get(COMPONENTS.MESSAGES)
+    messages: () => get(COMPONENTS.MESSAGES),
   },
   Mutation: {
     cpu: () => publishRandomData(cpuData, COMPONENTS.CPU),
     traffic: () => publishRandomData(trafficData, COMPONENTS.TRAFFIC),
     distribution: () => publishRandomData(regionData, COMPONENTS.DISTRIBUTION),
-    messages: () => publishRandomData(messageData, COMPONENTS.MESSAGES)
+    messages: () => publishRandomData(messageData, COMPONENTS.MESSAGES),
   },
   Subscription: {
     cpu: {
-      subscribe: () => pubsub.asyncIterator(COMPONENTS.CPU)
+      subscribe: () => pubsub.asyncIterator(COMPONENTS.CPU),
     },
     traffic: {
-      subscribe: () => pubsub.asyncIterator(COMPONENTS.TRAFFIC)
+      subscribe: () => pubsub.asyncIterator(COMPONENTS.TRAFFIC),
     },
     distribution: {
-      subscribe: () => pubsub.asyncIterator(COMPONENTS.DISTRIBUTION)
+      subscribe: () => pubsub.asyncIterator(COMPONENTS.DISTRIBUTION),
     },
     messages: {
-      subscribe: () => pubsub.asyncIterator(COMPONENTS.MESSAGES)
-    }
-  }
+      subscribe: () => pubsub.asyncIterator(COMPONENTS.MESSAGES),
+    },
+  },
 };

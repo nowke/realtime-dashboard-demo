@@ -4,7 +4,7 @@
 const Redis = require("ioredis");
 const redis = new Redis();
 
-const get = async key => {
+const get = async (key) => {
   try {
     const data = await redis.get(key);
     return JSON.parse(data);
@@ -24,5 +24,5 @@ const set = async (key, data) => {
 
 module.exports = {
   get,
-  set
+  set,
 };

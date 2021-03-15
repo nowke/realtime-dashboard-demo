@@ -9,14 +9,14 @@ const cpuData = () => {
 
   const percentage = parseInt(Math.random() * (max - min) + min, 10);
   return {
-    percentage
+    percentage,
   };
 };
 
 const timestamps = Array.from(Array(800).keys())
-  .map(num => ({
+  .map((num) => ({
     timestamp: 5 * num,
-    value: parseInt(Math.random() * 100, 10)
+    value: parseInt(Math.random() * 100, 10),
   }))
   .reverse();
 
@@ -28,15 +28,15 @@ const trafficData = () => {
     10
   );
   const dps = timestamps
-    .map(item => ({
+    .map((item) => ({
       timestamp: ts - item.timestamp,
-      value: item.value
+      value: item.value,
     }))
     .slice(slice, slice + 60);
   const total = dps.reduce((prev, curr) => prev + curr.value, 0);
   return {
     dps,
-    total
+    total,
   };
 };
 
@@ -48,7 +48,7 @@ const regionData = () => {
   const region2 = 100 - region1;
   return [
     { region: "us-west", percentage: region1 },
-    { region: "us-east", percentage: region2 }
+    { region: "us-east", percentage: region2 },
   ];
 };
 
@@ -57,23 +57,23 @@ const messageData = () => {
     {
       title: "Server restarted - s1.us-west",
       description: "Something went wrong! Had to reboot",
-      color: "#27ae60"
+      color: "#27ae60",
     },
     {
       title: "Service unavailable - web003",
       description: "web003 service down from last 5 minutes, Take action!",
-      color: "#f39c12"
+      color: "#f39c12",
     },
     {
       title: "High CPU Utilization - 95% s2.us-east",
       description: "Watch for s2.us-east. CPU is at maximum!",
-      color: "#e74c3c"
+      color: "#e74c3c",
     },
     {
       title: "High latency - int005",
       description: "Woah! This is unacceptable. Latency has gone nuts.",
-      color: "#e74c3c"
-    }
+      color: "#e74c3c",
+    },
   ];
   return messages.slice(0, parseInt(Math.random() * 4 + 1, 10));
 };
@@ -82,5 +82,5 @@ module.exports = {
   cpuData,
   regionData,
   messageData,
-  trafficData
+  trafficData,
 };
