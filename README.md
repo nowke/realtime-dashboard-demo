@@ -24,11 +24,17 @@ git clone https://github.com/nowke/realtime-dashboard-demo.git
 
 ### (a) Setup server
 
+**Start Redis server**
+
+```
+redis-server
+```
+
 **Install dependencies**
 
 ```
 cd server
-yarn
+yarn install
 ```
 
 **Start the server**
@@ -43,17 +49,11 @@ Server will be running at [http://localhost:4000/](http://localhost:4000/). The 
 
 ### (b) Setup worker
 
-**Start Redis server**
-
-```
-redis-server
-```
-
 **Install dependencies**
 
 ```
 cd worker
-yarn
+yarn install
 ```
 
 **Start the worker**
@@ -82,7 +82,7 @@ Fetched new results for TRAFFIC
 
 ```
 cd client
-yarn
+yarn install
 ```
 
 **Start client**

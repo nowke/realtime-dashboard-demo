@@ -4,7 +4,7 @@
 
 ```
 cd server
-yarn
+yarn install
 ```
 
 **Start the server**

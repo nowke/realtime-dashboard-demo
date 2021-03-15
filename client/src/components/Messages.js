@@ -42,7 +42,7 @@ class Message extends Component {
     return (
       <React.Fragment>
         {messages.map(message => (
-          <Col span={6}>
+          <Col span={6} key={message.title}>
             <div
               style={{ border: `1px solid ${message.color}`, height: "100%" }}
             >

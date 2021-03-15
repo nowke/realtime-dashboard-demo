@@ -4,7 +4,7 @@
 
 ```
 cd client
-yarn
+yarn install
 ```
 
 **Start client**

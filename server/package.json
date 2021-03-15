@@ -6,22 +6,23 @@
   "author": "Navaneesh Kumar",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint .*/**.js",
-    "start": "nodemon index.js"
+    "lint": "eslint --fix --ignore-path .gitignore .",
+    "start": "nodemon index.js",
+    "prelint": "prettier --write **/*.js"
   },
   "dependencies": {
-    "apollo-server": "^2.14.2",
-    "graphql": "^14.1.1",
-    "graphql-redis-subscriptions": "^2.0.0",
-    "graphql-subscriptions": "^1.0.0",
-    "ioredis": "^4.6.2",
-    "moment": "^2.24.0"
+    "apollo-server": "^2.21.1",
+    "graphql": "^15.5.0",
+    "graphql-redis-subscriptions": "2.3.1",
+    "graphql-subscriptions": "^1.2.1",
+    "ioredis": "^4.24.2",
+    "moment": "^2.29.1"
   },
   "devDependencies": {
-    "eslint": "^5.14.0",
-    "eslint-config-prettier": "^4.0.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "nodemon": "^1.18.10",
-    "prettier": "1.16.4"
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
   }
 }
