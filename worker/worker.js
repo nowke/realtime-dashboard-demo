@@ -3,7 +3,7 @@
  * (mocking actual event)
  */
 const schedule = require("node-schedule");
-const request = require("request-promise");
+const axios = require("axios");
 
 const queries = {
   CPU: `
@@ -45,16 +45,15 @@ const queries = {
 
 const makeHttpRequest = async component => {
   const options = {
-    uri: "http://localhost:4000",
-    method: "POST",
-    json: true,
-    body: {
+    url: "http://localhost:4000",
+    method: "post",
+    data: {
       operationName: null,
       variables: {},
       query: queries[component]
     }
   };
-  await request(options);
+  await axios(options);
 };
 
 const start = async () => {
