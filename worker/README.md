@@ -10,7 +10,7 @@ redis-server
 
 ```
 cd worker
-yarn
+yarn install
 ```
 
 **Start the worker**
