@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-import { VictoryPie, VictoryLabel } from "victory";
+import { VictoryPie, VictoryLabel, VictoryChart, VictoryAxis } from "victory";
 
 import Loading from "./Loading";
 
@@ -39,34 +39,37 @@ class CpuUsage extends Component {
       return <p>Error!</p>;
     }
     return (
-      <svg viewBox="0 0 400 400" width="100%">
+      <VictoryChart width={450} height={300}>
+        <VictoryAxis style={{ 
+            axis: {stroke: "transparent"}, 
+            ticks: {stroke: "transparent"},
+            tickLabels: { fill:"transparent"} 
+        }} />
         <VictoryPie
           standalone={false}
           animate={{ duration: 500 }}
-          width={400}
-          height={400}
           data={this.getData(data.cpu.percentage)}
           innerRadius={120}
           cornerRadius={25}
           labels={() => null}
           style={{
             data: {
-              fill: d => {
-                const color = d.y > 60 ? "#d35400" : "#27ae60";
-                return d.x === 1 ? color : "transparent";
+              fill: ({ datum }) => {
+                const color = datum.y > 60 ? "#d35400" : "#27ae60";
+                return datum.x === 1 ? color : "transparent";
               }
             }
           }}
         />
         <VictoryLabel
+          x={225}
+          y={150}
           textAnchor="middle"
           verticalAnchor="middle"
-          x={200}
-          y={200}
           text={`${Math.round(data.cpu.percentage)}%`}
           style={{ fontSize: 45 }}
         />
-      </svg>
+      </VictoryChart>
     );
   }
 }
